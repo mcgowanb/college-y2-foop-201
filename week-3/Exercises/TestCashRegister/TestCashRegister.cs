@@ -22,7 +22,7 @@ namespace TestCashRegister
             cr2.addItem(5.15);
 
             Console.WriteLine("{0} Total: {1}\nCash Register CR1 Total Number of Items: {2}", cr1.Name, cr1.Total, cr1.NumberOfItems);
-            Console.WriteLine("{0} Total: {1}\nCash Register CR1 Total Number of Items: {2}", cr2.Name, cr2.Total, cr2.NumberOfItems);
+            Console.WriteLine("{0} Total: {1}\nCash Register CR2 Total Number of Items: {2}", cr2.Name, cr2.Total, cr2.NumberOfItems);
         }
     }
 }
