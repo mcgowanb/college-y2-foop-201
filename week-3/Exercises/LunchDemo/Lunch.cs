@@ -6,7 +6,17 @@ using System.Threading.Tasks;
 
 namespace LunchDemo
 {
-    class Lunch
+    public class Lunch
     {
+        public String Dish { get; set; }
+        public String Side { get; set; }
+        public String Drink { get; set; }
+
+        public Lunch(String dish, String side, String drink)
+        {
+            Dish = dish;
+            Side = side;
+            Drink = drink;
+        }
     }
 }
