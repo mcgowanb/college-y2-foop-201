@@ -1,0 +1,12 @@
+a - illegal cannot use spaces
+b - legal
+c - legal, but shouldn't be used
+d - illegal - reserved keyword
+e - illegal reserved keyword
+f - legal, but no convention followed, class name is not descriptive
+g - illegal - cannot use #
+h - illegal cannot use numbers at start
+i - legal but not following convention
+j - legal
+k - illegal using numbers in class names
+l - legal but class name should begin with capitals
