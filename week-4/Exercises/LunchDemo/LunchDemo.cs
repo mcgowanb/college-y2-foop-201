@@ -25,6 +25,7 @@ namespace LunchDemo
             displayLunch(lunch1, lunch2, lunch3, lunch4, lunch5);
         }
 
+        //params Lunch[] lunches
         static void displayLunch(Lunch l1, Lunch l2, Lunch l3)
         {
             Console.WriteLine("{0,-20}{1,-20}{2,-20}", "Dish", "Side", "Drink");

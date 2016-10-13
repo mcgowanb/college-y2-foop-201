@@ -31,6 +31,7 @@ namespace SchoolsDemo
             PrintSchoolList(schools);
 
             Console.Write("Enter a minimum enrollment to be displayed ");
+            //use linq or lamda expressions
             int minimumLimit = Convert.ToInt32(Console.ReadLine());
 
         }
