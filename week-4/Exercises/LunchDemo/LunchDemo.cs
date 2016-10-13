@@ -25,33 +25,13 @@ namespace LunchDemo
             displayLunch(lunch1, lunch2, lunch3, lunch4, lunch5);
         }
 
-        //params Lunch[] lunches
-        static void displayLunch(Lunch l1, Lunch l2, Lunch l3)
+        static void displayLunch(params Lunch[] lunches)
         {
             Console.WriteLine("{0,-20}{1,-20}{2,-20}", "Dish", "Side", "Drink");
-            Console.WriteLine("{0,-20}{1,-20}{2,-20}", l1.Dish, l1.Side, l1.Drink);
-            Console.WriteLine("{0,-20}{1,-20}{2,-20}", l2.Dish, l2.Side, l2.Drink);
-            Console.WriteLine("{0,-20}{1,-20}{2,-20}", l3.Dish, l3.Side, l3.Drink);
+            foreach (Lunch lunch in lunches)
+            {
+                Console.WriteLine("{0,-20}{1,-20}{2,-20}", lunch.Dish, lunch.Side, lunch.Drink);
+            }
         }
-
-        static void displayLunch(Lunch l1, Lunch l2, Lunch l3, Lunch l4)
-        {
-            Console.WriteLine("{0,-20}{1,-20}{2,-20}", "Dish", "Side", "Drink");
-            Console.WriteLine("{0,-20}{1,-20}{2,-20}", l1.Dish, l1.Side, l1.Drink);
-            Console.WriteLine("{0,-20}{1,-20}{2,-20}", l2.Dish, l2.Side, l2.Drink);
-            Console.WriteLine("{0,-20}{1,-20}{2,-20}", l3.Dish, l3.Side, l3.Drink);
-            Console.WriteLine("{0,-20}{1,-20}{2,-20}", l4.Dish, l4.Side, l4.Drink);
-        }
-
-        static void displayLunch(Lunch l1, Lunch l2, Lunch l3, Lunch l4, Lunch l5)
-        {
-            Console.WriteLine("{0,-20}{1,-20}{2,-20}", "Dish", "Side", "Drink");
-            Console.WriteLine("{0,-20}{1,-20}{2,-20}", l1.Dish, l1.Side, l1.Drink);
-            Console.WriteLine("{0,-20}{1,-20}{2,-20}", l2.Dish, l2.Side, l2.Drink);
-            Console.WriteLine("{0,-20}{1,-20}{2,-20}", l3.Dish, l3.Side, l3.Drink);
-            Console.WriteLine("{0,-20}{1,-20}{2,-20}", l4.Dish, l4.Side, l4.Drink);
-            Console.WriteLine("{0,-20}{1,-20}{2,-20}", l5.Dish, l5.Side, l5.Drink);
-        }
-
     }
 }

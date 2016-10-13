@@ -23,6 +23,13 @@ namespace SchoolsDemo
             return this.enrollment.CompareTo(tempSchool.enrollment);
         }
 
+        public int Enrollment {
+            get
+            {
+                return this.enrollment; 
+            }
+        }
+
         public override string ToString()
         {
             return String.Format("{0} school has {1} students", name, enrollment);

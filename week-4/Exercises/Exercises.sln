@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LunchDemo", "LunchDemo\LunchDemo.csproj", "{E088370C-2502-4F90-BE16-D30DE21CDB87}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolsDemo", "SchoolsDemo\SchoolsDemo.csproj", "{CD87E30A-81B0-487A-8342-7A6404E1629B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FriendList", "FriendList\FriendList.csproj", "{295B5845-CCC3-47AB-8033-BA0BF5047F20}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FriendBirthday", "FriendBirthday\FriendBirthday.csproj", "{D7DB84CC-972D-4592-BD56-05243B30B6C2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{295B5845-CCC3-47AB-8033-BA0BF5047F20}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{295B5845-CCC3-47AB-8033-BA0BF5047F20}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{295B5845-CCC3-47AB-8033-BA0BF5047F20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7DB84CC-972D-4592-BD56-05243B30B6C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7DB84CC-972D-4592-BD56-05243B30B6C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7DB84CC-972D-4592-BD56-05243B30B6C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7DB84CC-972D-4592-BD56-05243B30B6C2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

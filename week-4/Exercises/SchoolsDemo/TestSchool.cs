@@ -31,12 +31,29 @@ namespace SchoolsDemo
             PrintSchoolList(schools);
 
             Console.Write("Enter a minimum enrollment to be displayed ");
-            //use linq or lamda expressions
             int minimumLimit = Convert.ToInt32(Console.ReadLine());
+
+
+            //IEnumerable<School> query = from sch in schools
+            //            where sch.Enrollment >= minimumLimit
+            //            select sch;
+
+            IEnumerable<School> query = schools.Where(sch => sch.Enrollment > minimumLimit);
+
+            PrintSchoolList(query);
 
         }
 
         static void PrintSchoolList(School[] schools)
+        {
+            foreach (School school in schools)
+            {
+                Console.WriteLine(school);
+            }
+            Console.WriteLine("\n\n");
+        }
+
+        static void PrintSchoolList(IEnumerable<School> schools)
         {
             foreach (School school in schools)
             {
