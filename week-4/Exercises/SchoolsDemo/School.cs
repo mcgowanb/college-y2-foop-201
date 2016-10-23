@@ -17,10 +17,22 @@ namespace SchoolsDemo
             this.name = name;
         }
 
+        //public int CompareTo(object obj)
+        //{
+        //    School tempSchool = (School)obj;
+        //    return this.enrollment.CompareTo(tempSchool.enrollment);
+        //}
+
         public int CompareTo(object obj)
         {
             School tempSchool = (School)obj;
-            return this.enrollment.CompareTo(tempSchool.enrollment);
+            int val = 0;
+            if (this.enrollment < tempSchool.enrollment)
+                val = 11;
+            else if (this.enrollment > tempSchool.enrollment)
+                val = -1;
+
+            return val;
         }
 
         public int Enrollment {
