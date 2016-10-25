@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,7 +28,7 @@ namespace SchoolsDemo
             School tempSchool = (School)obj;
             int val = 0;
             if (this.enrollment < tempSchool.enrollment)
-                val = 11;
+                val = 1;
             else if (this.enrollment > tempSchool.enrollment)
                 val = -1;
 
