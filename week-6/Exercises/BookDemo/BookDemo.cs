@@ -23,7 +23,14 @@ namespace BookDemo
             tBook.Author = "Mr Men";
             tBook.Title = "Invalid Price";
             tBook.Isbn = "1234";
-            tBook.Price = 12.50;
+            try
+            {
+                tBook.Price = 12.50;
+            }
+            catch (IOException e)
+            {
+                Console.WriteLine(e.Message);
+            }
 
             Console.WriteLine(tBook);
 
@@ -39,7 +46,7 @@ namespace BookDemo
             {
                 Console.WriteLine(e.Message);
             }
-            
+
 
             Console.WriteLine(tBook2);
 
@@ -47,15 +54,31 @@ namespace BookDemo
             ctBook.Author = "Mr Men";
             ctBook.Title = "Invalid Price";
             ctBook.Isbn = "1234";
-            ctBook.Price = 34.99;
+            try
+            {
+                ctBook.Price = 34.99;
+            }
+
+            catch (IOException e)
+            {
+                Console.WriteLine(e.Message);
+            }
 
             Console.WriteLine(ctBook);
 
             CoffeTableBook ctBook2 = new CoffeTableBook();
             ctBook2.Author = "Mr Men";
-            ctBook2.Title = "Invalid Price";
+            ctBook2.Title = "Valid Price";
             ctBook2.Isbn = "1234";
-            ctBook2.Price = 100;
+            try
+            {
+                ctBook2.Price = 100;
+            }
+            catch (IOException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
 
             Console.WriteLine(ctBook2);
         }
