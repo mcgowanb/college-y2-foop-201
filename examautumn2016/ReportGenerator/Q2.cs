@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Text.RegularExpressions;
 
 public class Q2
@@ -53,17 +53,7 @@ public class Q2
 
     public static int Search (String str, String searchString)
     {
-        int result = 0;
-        String[] elems = str.Split(' ');
-        foreach (String item in elems)
-        {
-
-            return Regex.Matches(str, searchString).Count;
-            //if (item.Equals(searchString)) {
-            //    result++;
-            //}
-        }
-        return result;
+        return Regex.Matches(str, searchString).Count;
     }
 
 
