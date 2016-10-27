@@ -15,5 +15,35 @@ namespace Pay
         public Double GrossSalariedAmount { get; set; }
         public Double HoursForHourlyEmployee { get; set; }
         public Double RateForHourlyEmployee { get; set; }
+
+        //public double CalculateGrossPay()
+        //{
+            
+        //}
+
+        //public double CalculateFedTaxPaid()
+        //{
+
+        //}
+
+        //public double CalculateSocSecPaid()
+        //{
+
+        //}
+
+        //public double CalculateTotalDeductions()
+        //{
+
+        //}
+
+        //public double CalculateTakeHomePay()
+        //{
+
+        //}
+
+        //public override string ToString()
+        //{
+        //    return base.ToString();
+        //}
     }
 }
