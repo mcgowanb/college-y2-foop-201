@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SimpleCalculator"
         mc:Ignorable="d"
-        Title="Simple Calculator" Height="238" Width="301" ResizeMode="NoResize" Loaded="Window_Loaded">
+        Title="Simple Calculator" Height="238" Width="301" ResizeMode="NoResize" Loaded="Window_Loaded"
+        WindowStartupLocation="CenterScreen">
     <Grid>
         <Label x:Name="label" Content="Operand 1&#xD;&#xA;" HorizontalAlignment="Left" Margin="28,27,0,0" VerticalAlignment="Top" Width="115"/>
         <Label x:Name="label_Copy" Content="Operator&#xD;&#xA;" HorizontalAlignment="Left" Margin="28,58,0,0" VerticalAlignment="Top" Width="101"/>
