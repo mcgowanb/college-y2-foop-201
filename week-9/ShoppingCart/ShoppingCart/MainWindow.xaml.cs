@@ -23,6 +23,7 @@ namespace ShoppingCart
     {
         private ObservableCollection<Product> products;
         private ObservableCollection<Product> cart;
+        private decimal totalCost;
         public MainWindow()
         {
             InitializeComponent();
@@ -47,6 +48,8 @@ namespace ShoppingCart
 
             lbxProducts.ItemsSource = products;
             lbxCart.ItemsSource = cart;
+            totalCost = 0;
+            UpdateTotalCostLabel();
 
         }
 
@@ -68,6 +71,8 @@ namespace ShoppingCart
             {
                 cart.Add(selectedProduct);
                 products.Remove(selectedProduct);
+                totalCost += selectedProduct.Price;
+                UpdateTotalCostLabel();
             }
         }
 
@@ -78,7 +83,14 @@ namespace ShoppingCart
             {
                 cart.Remove(selectedProduct);
                 products.Add(selectedProduct);
+                totalCost -= selectedProduct.Price;
+                UpdateTotalCostLabel();
             }
+        }
+
+        private void UpdateTotalCostLabel()
+        {
+            lblTotalCost.Content = totalCost.ToString("C");
         }
     }
 }

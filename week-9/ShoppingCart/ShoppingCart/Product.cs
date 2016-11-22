@@ -12,6 +12,7 @@ namespace ShoppingCart
         public string Name { get; set; }
         public string ID { get; set; }
         public decimal Price { get; set; }
+        public decimal Tax { get; set; }
         public const decimal TAX_RATE = .23m;
 
         public Product(string id, string name, decimal price)
@@ -23,16 +24,17 @@ namespace ShoppingCart
 
         public override string ToString()
         {
-            return String.Format("{0}\t{1}\t{2}",
+            return String.Format("{0}\t{1}\t{2}\t{3}",
                 ID,
                 Name,
-                Price.ToString("C")
+                Price.ToString("C"),
+                Tax.ToString("C")
             );
         }
 
         public void AddTax()
         {
-            Price += (Price * TAX_RATE);
+            Tax += (Price * TAX_RATE);
         }
     }
 }
