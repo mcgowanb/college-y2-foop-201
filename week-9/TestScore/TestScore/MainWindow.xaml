@@ -5,9 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TestScore"
         mc:Ignorable="d"
-        Title="Test Scores" Height="230.918" Width="310.651"
-        Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
-    <Grid Margin="0,0,-8,-6">
+        Title="Test Scores" Height="242.33" Width="300.19"
+        Loaded="Window_Loaded" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+
+    <Grid Margin="0,0,4,1">
         <TextBox x:Name="txtScoreIn" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Height="23" Margin="119,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50"/>
         <TextBox x:Name="txtScoreTotal" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Height="23" Margin="119,57,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" IsEnabled="False"/>
         <TextBox x:Name="txtScoreCount" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Height="23" Margin="119,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" IsEnabled="False"/>
@@ -16,9 +17,10 @@
         <Label x:Name="label_Copy" Content="Score Total" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="10,54,0,0" VerticalAlignment="Top" Width="104"/>
         <Label x:Name="label_Copy1" Content="Score Count" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="10,94,0,0" VerticalAlignment="Top" Width="104"/>
         <Label x:Name="label_Copy2" Content="Score Average" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="10,131,0,0" VerticalAlignment="Top" Width="104"/>
-        <Button x:Name="btnAdd" Content="Add" HorizontalAlignment="Left" Margin="201,19,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="btnReset" Content="Reset" HorizontalAlignment="Left" Margin="94,162,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="btnExit" Content="Exit" HorizontalAlignment="Left" Margin="201,162,0,0" VerticalAlignment="Top" Width="75" Click="btnExit_Click"/>
+        <Button x:Name="btnAdd" Content="Add" HorizontalAlignment="Left" Margin="201,19,0,0" VerticalAlignment="Top" Width="75" IsDefault="True" Click="btnAdd_Click"/>
+        <Button x:Name="btnReset" Content="Reset" HorizontalAlignment="Left" Margin="94,172,0,0" VerticalAlignment="Top" Width="75" Click="btnReset_Click"/>
+        <Button x:Name="btnExit" Content="Exit" HorizontalAlignment="Left" Margin="201,172,0,0" VerticalAlignment="Top" Width="75" Click="btnExit_Click" 
+        	IsCancel="True"/>
 
     </Grid>
 </Window>

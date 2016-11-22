@@ -11,43 +11,16 @@ namespace ConsoleApplication1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(new Program().CalculateCheckSum("1235567TW"));
+            new Program().Test();
         }
 
 
-        public bool CalculateCheckSum(string value)
-        {
-            String regex = @"^[0-9]{7}[A-Z]{1,2}$";
-            Regex r = new Regex(regex, RegexOptions.IgnoreCase);
-            Match m = r.Match(value);
-            if (m.Success)
+        public void Test() {
+            int[] nums = {2,3,4,5};
+            for (int x = 3; x >= 0; --x)
             {
-                return CheckMOD23(value);
+                Console.WriteLine((nums[x]));
             }
-            else return false;
         }
-
-        public bool CheckMOD23(String value)
-        {
-            int length = value.Length;
-            int total = 0;
-            for (int i = 0; i < 7; ++i)
-            {
-                total += (int)value[i] * (8 - i);
-            }
-
-            byte[] asciiBytes = Encoding.ASCII.GetBytes(value.ToUpper());
-            if (length == 9)
-            {
-                total += ((int)asciiBytes[8] - 64) * 9;
-            }
-
-            int mod = total % 23;
-            if (mod == 0) mod = 23;
-
-            int nV = 63 + mod;
-            int cV = asciiBytes[7];
-            return nV == cV;
-        }
-    }
+    } 
 }

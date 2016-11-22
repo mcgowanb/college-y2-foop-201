@@ -20,6 +20,8 @@ namespace TestScore
     /// </summary>
     public partial class MainWindow : Window
     {
+        public int TotalScore { get; set; }
+        public int ScoreCount { get; set; }
         public MainWindow()
         {
             InitializeComponent();
@@ -32,6 +34,28 @@ namespace TestScore
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            txtScoreIn.Focus();
+        }
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            int score = Convert.ToInt32(txtScoreIn.Text);
+            ScoreCount++;
+            TotalScore += score;
+
+            txtScoreCount.Text = ScoreCount.ToString();
+            txtScoreTotal.Text = TotalScore.ToString();
+            double average = (double)TotalScore / ScoreCount;
+            txtScoreAverage.Text = average.ToString("0.00");
+
+            txtScoreIn.Text = "";
+            txtScoreIn.Focus();
+        }
+
+        private void btnReset_Click(object sender, RoutedEventArgs e)
+        {
+            txtScoreCount.Text = txtScoreTotal.Text = txtScoreAverage.Text = "";
+            TotalScore = ScoreCount = 0;
             txtScoreIn.Focus();
         }
     }

@@ -1,0 +1,19 @@
+﻿<Window x:Class="Factorial.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Factorial"
+        mc:Ignorable="d"
+        Title="Factorial Calculator" Height="162" Width="285" ResizeMode="NoResize"
+        Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
+    <Grid Margin="0,0,2,5">
+        <Label x:Name="label" Content="Number" HorizontalAlignment="Left" Margin="13,18,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtNumber" HorizontalAlignment="Left" Height="23" Margin="72,21,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="42"/>
+        <Label x:Name="label_Copy" Content="Factorial" HorizontalAlignment="Left" Margin="13,49,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtFactorial" HorizontalAlignment="Left" Height="23" Margin="72,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182"/>
+        <Button x:Name="btnCalculate" Content="Calculate" HorizontalAlignment="Left" Margin="13,91,0,0" VerticalAlignment="Top" Width="75" Click="btnCalculate_Click" IsDefault="True"/>
+        <Button x:Name="btnExit" Content="Exit" HorizontalAlignment="Left" Margin="179,91,0,0" VerticalAlignment="Top" Width="75" Click="btnExit_Click"  IsCancel="True"/>
+
+    </Grid>
+</Window>
