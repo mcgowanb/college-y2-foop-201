@@ -48,8 +48,11 @@ namespace ShoppingCart
 
             lbxProducts.ItemsSource = products;
             lbxCart.ItemsSource = cart;
-            totalCost = 0;
-            UpdateTotalCostLabel();
+            UpdateTotalCost();
+
+            String[] bikeTypes = { "All", "Male", "Female" };
+            cbxBikeType.ItemsSource = bikeTypes;
+            cbxBikeType.SelectedIndex = 0;
 
         }
 
@@ -71,8 +74,7 @@ namespace ShoppingCart
             {
                 cart.Add(selectedProduct);
                 products.Remove(selectedProduct);
-                totalCost += selectedProduct.Price;
-                UpdateTotalCostLabel();
+                UpdateTotalCost();
             }
         }
 
@@ -83,13 +85,17 @@ namespace ShoppingCart
             {
                 cart.Remove(selectedProduct);
                 products.Add(selectedProduct);
-                totalCost -= selectedProduct.Price;
-                UpdateTotalCostLabel();
+                UpdateTotalCost();
             }
         }
 
-        private void UpdateTotalCostLabel()
+        private void UpdateTotalCost()
         {
+            totalCost = 0;
+            foreach (var item in cart)
+            {
+                totalCost += item.Price;
+            }
             lblTotalCost.Content = totalCost.ToString("C");
         }
     }
