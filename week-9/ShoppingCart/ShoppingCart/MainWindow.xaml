@@ -7,20 +7,23 @@
         mc:Ignorable="d"
         Title="Shopping Cart" Height="408.664" Width="720.33" WindowStartupLocation="CenterScreen"
         Loaded="Window_Loaded">
-    <Grid>
-        <ListBox x:Name="lbxProducts" HorizontalAlignment="Left" Height="195" Margin="31,76,0,0" VerticalAlignment="Top" Width="281"/>
-        <ListBox x:Name="lbxCart" HorizontalAlignment="Left" Height="195" Margin="394,76,0,0" VerticalAlignment="Top" Width="282"/>
+    <Grid Margin="0,0,-86,-2">
+        <ListBox x:Name="lbxProducts" HorizontalAlignment="Left" Height="195" Margin="31,76,0,0" VerticalAlignment="Top" Width="316"/>
+        <ListBox x:Name="lbxCart" HorizontalAlignment="Left" Height="195" Margin="397,76,0,0" VerticalAlignment="Top" Width="309"/>
         <Label x:Name="label" Content="Products" HorizontalAlignment="Left" Height="32" Margin="31,17,0,0" VerticalAlignment="Top" Width="153" Foreground="#FFCF0000" FontSize="16" FontWeight="Bold"/>
-        <Label x:Name="label_Copy" Content="Cart" HorizontalAlignment="Left" Height="32" Margin="441,39,0,0" VerticalAlignment="Top" Width="153" Foreground="#FFCF0000" FontSize="16" FontWeight="Bold"/>
-        <Button x:Name="btnAddToCart" Content="&gt;&gt;" HorizontalAlignment="Left" Margin="332,134,0,0" VerticalAlignment="Top" Width="40" Click="btnAddToCart_Click"/>
-        <Button x:Name="btnRemoveFromCart" Content="&lt;&lt;" HorizontalAlignment="Left" Margin="332,181,0,0" VerticalAlignment="Top" Width="40" Click="btnRemoveFromCart_Click"/>
-        <Button x:Name="btnAddTax" Content="Add Tax" HorizontalAlignment="Left" Margin="31,276,0,0" VerticalAlignment="Top" Width="75" Click="btnAddTax_Click"/>
-        <Button x:Name="btnExit" IsCancel ="True" Content="Exit" HorizontalAlignment="Left" Margin="601,276,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="1.715,0.487" Click="btnExit_Click"/>
-        <Label x:Name="lblTotal" Content="Total Cost:" HorizontalAlignment="Left" Margin="551,301,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lblTotalCost" Content="€0.00" HorizontalAlignment="Left" Margin="617,301,0,0" VerticalAlignment="Top" RenderTransformOrigin="9.085,0.487" 
+        <Label x:Name="label_Copy" Content="Cart" HorizontalAlignment="Left" Height="32" Margin="397,39,0,0" VerticalAlignment="Top" Width="153" Foreground="#FFCF0000" FontSize="16" FontWeight="Bold"/>
+        <Button x:Name="btnAddToCart" Content="&gt;&gt;" HorizontalAlignment="Left" Margin="352,136,0,0" VerticalAlignment="Top" Width="40" Click="btnAddToCart_Click"/>
+        <Button x:Name="btnRemoveFromCart" Content="&lt;&lt;" HorizontalAlignment="Left" Margin="352,183,0,0" VerticalAlignment="Top" Width="40" Click="btnRemoveFromCart_Click"/>
+        <Button x:Name="btnExit" IsCancel ="True" Content="Exit" HorizontalAlignment="Left" Margin="601,332,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="1.715,0.487" Click="btnExit_Click"/>
+        <Label x:Name="lblTotal" Content="Total Cost:" HorizontalAlignment="Left" Margin="551,278,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblShippingDate" Content="" HorizontalAlignment="Left" Margin="621,301,0,0" VerticalAlignment="Top" RenderTransformOrigin="9.085,0.487" 
          Width="85"/>
         <Label x:Name="label_Copy1" Content="Bike Type:" HorizontalAlignment="Left" Height="32" Margin="31,44,0,0" VerticalAlignment="Top" Width="153" Foreground="#FFCF0000" FontSize="16" FontWeight="Bold"/>
-        <ComboBox x:Name="cbxBikeType" HorizontalAlignment="Left" Margin="192,49,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="cbxBikeType" HorizontalAlignment="Left" Margin="192,49,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cbxBikeType_SelectionChanged"/>
+        <Button x:Name="btnEstimateShipping" Content="Estimate Shipping Date" HorizontalAlignment="Left" Margin="441,332,0,0" VerticalAlignment="Top" Width="140" Click="btnEstimateShipping_Click"/>
+        <Label x:Name="lblTotal_Copy" Content="Shipping Date" HorizontalAlignment="Left" Margin="531,301,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblTotalCost" Content="€0.00" HorizontalAlignment="Left" Margin="621,278,0,0" VerticalAlignment="Top" RenderTransformOrigin="9.085,0.487" 
+        	Width="85"/>
 
     </Grid>
 </Window>
