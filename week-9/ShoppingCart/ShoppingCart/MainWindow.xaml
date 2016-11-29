@@ -5,25 +5,69 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ShoppingCart"
         mc:Ignorable="d"
-        Title="Shopping Cart" Height="408.664" Width="720.33" WindowStartupLocation="CenterScreen"
+        Title="Shopping Cart" Height="408.664" Width="751.33" WindowStartupLocation="CenterScreen"
         Loaded="Window_Loaded">
     <Grid Margin="0,0,-86,-2">
-        <ListBox x:Name="lbxProducts" HorizontalAlignment="Left" Height="195" Margin="31,76,0,0" VerticalAlignment="Top" Width="316"/>
-        <ListBox x:Name="lbxCart" HorizontalAlignment="Left" Height="195" Margin="397,76,0,0" VerticalAlignment="Top" Width="309"/>
         <Label x:Name="label" Content="Products" HorizontalAlignment="Left" Height="32" Margin="31,17,0,0" VerticalAlignment="Top" Width="153" Foreground="#FFCF0000" FontSize="16" FontWeight="Bold"/>
-        <Label x:Name="label_Copy" Content="Cart" HorizontalAlignment="Left" Height="32" Margin="397,39,0,0" VerticalAlignment="Top" Width="153" Foreground="#FFCF0000" FontSize="16" FontWeight="Bold"/>
+        <Label x:Name="label_Copy" Content="Cart" HorizontalAlignment="Left" Height="32" Margin="414,44,0,0" VerticalAlignment="Top" Width="153" Foreground="#FFCF0000" FontSize="16" FontWeight="Bold"/>
         <Button x:Name="btnAddToCart" Content="&gt;&gt;" HorizontalAlignment="Left" Margin="352,136,0,0" VerticalAlignment="Top" Width="40" Click="btnAddToCart_Click"/>
         <Button x:Name="btnRemoveFromCart" Content="&lt;&lt;" HorizontalAlignment="Left" Margin="352,183,0,0" VerticalAlignment="Top" Width="40" Click="btnRemoveFromCart_Click"/>
-        <Button x:Name="btnExit" IsCancel ="True" Content="Exit" HorizontalAlignment="Left" Margin="601,332,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="1.715,0.487" Click="btnExit_Click"/>
+        <Button x:Name="btnExit" IsCancel ="True" Content="Exit" HorizontalAlignment="Left" Margin="650,332,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="1.715,0.487" Click="btnExit_Click"/>
         <Label x:Name="lblTotal" Content="Total Cost:" HorizontalAlignment="Left" Margin="551,278,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lblShippingDate" Content="" HorizontalAlignment="Left" Margin="621,301,0,0" VerticalAlignment="Top" RenderTransformOrigin="9.085,0.487" 
+        <Label x:Name="lblShippingDate" Content="" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="640,301,0,0" VerticalAlignment="Top" RenderTransformOrigin="9.085,0.487" 
          Width="85"/>
         <Label x:Name="label_Copy1" Content="Bike Type:" HorizontalAlignment="Left" Height="32" Margin="31,44,0,0" VerticalAlignment="Top" Width="153" Foreground="#FFCF0000" FontSize="16" FontWeight="Bold"/>
         <ComboBox x:Name="cbxBikeType" HorizontalAlignment="Left" Margin="192,49,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cbxBikeType_SelectionChanged"/>
-        <Button x:Name="btnEstimateShipping" Content="Estimate Shipping Date" HorizontalAlignment="Left" Margin="441,332,0,0" VerticalAlignment="Top" Width="140" Click="btnEstimateShipping_Click"/>
+        <Button x:Name="btnEstimateShipping" Content="Estimate Shipping Date" HorizontalAlignment="Left" Margin="476,332,0,0" VerticalAlignment="Top" Width="140" Click="btnEstimateShipping_Click"/>
         <Label x:Name="lblTotal_Copy" Content="Shipping Date" HorizontalAlignment="Left" Margin="531,301,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lblTotalCost" Content="€0.00" HorizontalAlignment="Left" Margin="621,278,0,0" VerticalAlignment="Top" RenderTransformOrigin="9.085,0.487" 
+        <Label x:Name="lblTotalCost" Content="€0.00" HorizontalAlignment="Left" Margin="640,278,0,0" VerticalAlignment="Top" RenderTransformOrigin="9.085,0.487" HorizontalContentAlignment="Right"
         	Width="85"/>
+        <ListView x:Name="lvProducts" HorizontalAlignment="Left" Height="195" Margin="19,81,0,0" VerticalAlignment="Top" Width="311">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ID" Width="38" DisplayMemberBinding="{Binding ID}" />
+                    <GridViewColumn Header="Name" Width="90" DisplayMemberBinding="{Binding Name}" />
+                    <GridViewColumn Header="Price" Width="60">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Price, StringFormat=C2}" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Tax" Width="60">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Tax, StringFormat=C2}" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Type" Width="50" DisplayMemberBinding="{Binding Type}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <ListView x:Name="lvCart" HorizontalAlignment="Left" Height="195" Margin="414,83,0,0" VerticalAlignment="Top" Width="311">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ID" Width="38" DisplayMemberBinding="{Binding ID}" />
+                    <GridViewColumn Header="Name" Width="90" DisplayMemberBinding="{Binding Name}" />
+                    <GridViewColumn Header="Price" Width="60">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Price, StringFormat=C2}" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Tax" Width="60">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Tax, StringFormat=C2}" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Type" Width="50" DisplayMemberBinding="{Binding Type}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
 
     </Grid>
 </Window>

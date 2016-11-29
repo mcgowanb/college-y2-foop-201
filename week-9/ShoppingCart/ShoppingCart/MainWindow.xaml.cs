@@ -62,8 +62,8 @@ namespace ShoppingCart
             Product p6 = new Product("1123", "Road Bike", 829.99m, female);
             products.Add(p6);
 
-            lbxProducts.ItemsSource = products;
-            lbxCart.ItemsSource = cart;
+            lvProducts.ItemsSource = products;
+            lvCart.ItemsSource = cart;
             UpdateTotalCost();
 
             String[] bikeTypes = { "All", "Male", "Female" };
@@ -76,7 +76,7 @@ namespace ShoppingCart
 
         private void btnAddToCart_Click(object sender, RoutedEventArgs e)
         {
-            Product selectedProduct = lbxProducts.SelectedItem as Product;
+            Product selectedProduct = lvProducts.SelectedItem as Product;
 
             if (selectedProduct != null)
             {
@@ -89,7 +89,7 @@ namespace ShoppingCart
 
         private void btnRemoveFromCart_Click(object sender, RoutedEventArgs e)
         {
-            Product selectedProduct = lbxCart.SelectedItem as Product;
+            Product selectedProduct = lvCart.SelectedItem as Product;
             if (selectedProduct != null)
             {
                 cart.Remove(selectedProduct);
@@ -111,12 +111,12 @@ namespace ShoppingCart
         private void cbxBikeType_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             String selected = cbxBikeType.SelectedItem as String;
-            lbxProducts.ItemsSource = "";
+            lvProducts.ItemsSource = "";
             filteredList.Clear();
 
             if (selected.Equals("All"))
             {
-                lbxProducts.ItemsSource = products;
+                lvProducts.ItemsSource = products;
             }
             else
             {
@@ -127,7 +127,7 @@ namespace ShoppingCart
                         filteredList.Add(item);
                     }
                 }
-                lbxProducts.ItemsSource = filteredList;
+                lvProducts.ItemsSource = filteredList;
             }
 
         }
