@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ShoppingCart
 {
-    class Variation
+    abstract class Variation
     {
         public Variation() { }
 
@@ -22,12 +22,47 @@ namespace ShoppingCart
         }
 
         public override bool Equals(object obj)
-        {
+        { 
             String s = (String)obj;
             return Type.Equals(s);
         }
 
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+    }
 
+    class ColourVariation : Variation
+    {
+        public String AdditionalInfo { get; set; }
+        public ColourVariation(String type, String additionalInfo) : base(type)
+        {
+            AdditionalInfo = additionalInfo;
+        }
 
+        public override string ToString()
+        {
+            return base.ToString() + " " + AdditionalInfo;
+        }
+
+        public override bool Equals(object obj)
+        {
+            String s = (String)obj;
+            return this.ToString().Equals(s);
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+    }
+
+    class GenderVariation : Variation
+    {
+        public GenderVariation(String type): base(type)
+        {
+
+        }
     }
 }

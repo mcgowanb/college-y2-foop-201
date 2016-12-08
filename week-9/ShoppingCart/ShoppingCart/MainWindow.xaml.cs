@@ -45,8 +45,9 @@ namespace ShoppingCart
             cart = new ObservableCollection<Product>();
             filteredList = new ObservableCollection<Product>();
 
-            Variation male = new Variation(BikeTypes.Male.ToString());
-            Variation female = new Variation(BikeTypes.Female.ToString());
+            Variation male = new GenderVariation(BikeTypes.Male.ToString());
+            Variation female = new GenderVariation(BikeTypes.Female.ToString());
+            Variation blue = new ColourVariation("Blue", "Steel Finish");
 
 
             Product p1 = new Product("1324", "Bike", 12.53m, male);
@@ -55,7 +56,7 @@ namespace ShoppingCart
             products.Add(p2);
             Product p3 = new Product("1326", "Mountain Bike", 900m, male);
             products.Add(p3);
-            Product p4 = new Product("1432", "Bike", 123.53m, female);
+            Product p4 = new Product("1432", "Bike", 123.53m, blue);
             products.Add(p4);
             Product p5 = new Product("1122", "Road Bike", 999.99m, female);
             products.Add(p5);
@@ -64,15 +65,24 @@ namespace ShoppingCart
 
             lvProducts.ItemsSource = products;
             lvCart.ItemsSource = cart;
-            UpdateTotalCost();
+            CalculateTotalCost();
 
-            String[] bikeTypes = { "All", "Male", "Female" };
-
+            HashSet<String> bikeTypes = GetProductTypes();
             cbxBikeType.ItemsSource = bikeTypes;
             cbxBikeType.SelectedIndex = 0;
         }
 
-       
+        private HashSet<String> GetProductTypes()
+        {
+            //using hashset as it holds only unique values
+            HashSet<String> l = new HashSet<String>();
+            l.Add("All");
+            foreach (var item in products)
+            {
+                l.Add(item.Type.ToString());
+            }
+            return l;
+        }
 
         private void btnAddToCart_Click(object sender, RoutedEventArgs e)
         {
@@ -83,7 +93,7 @@ namespace ShoppingCart
                 cart.Add(selectedProduct);
                 products.Remove(selectedProduct);
                 filteredList.Remove(selectedProduct);
-                UpdateTotalCost();
+                CalculateTotalCost();
             }
         }
 
@@ -94,18 +104,18 @@ namespace ShoppingCart
             {
                 cart.Remove(selectedProduct);
                 products.Add(selectedProduct);
-                UpdateTotalCost();
+                CalculateTotalCost();
             }
         }
 
-        private void UpdateTotalCost()
+        private void CalculateTotalCost()
         {
             totalCost = 0;
             foreach (var item in cart)
             {
                 totalCost += item.getTotalCost();
             }
-            lblTotalCost.Content = totalCost.ToString("C");
+            lblTotalCost.Content = totalCost.ToString("C", CultureInfo.CurrentCulture);
         }
 
         private void cbxBikeType_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -134,10 +144,20 @@ namespace ShoppingCart
 
         private void btnEstimateShipping_Click(object sender, RoutedEventArgs e)
         {
-            Random rnd = new Random();
-            DateTime d = DateTime.Now.AddDays(rnd.Next(1, 30));
+            DateTime d = GenerateRandomDate(1, 30);
 
             lblShippingDate.Content = d.ToString("d", CultureInfo.CurrentCulture);
+        }
+
+        /**
+         * Generate random date time between to dates 
+         */
+        private DateTime GenerateRandomDate(int start, int end)
+        {
+            Random randomFactory = new Random();
+
+            DateTime date = DateTime.Now.AddDays(randomFactory.Next(start, end));
+            return date;
         }
     }
 }
